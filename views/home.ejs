@@ -1,0 +1,24 @@
+<!-- Here its  the way to add a header and footer using "Include"-->
+<!--partials/header why this because most of the time we gonna see like this and we need to declare the exact path-->
+
+<%- include("partials/header"); -%>
+
+    <h1>Introduction</h1>
+    <p><%= StartingContent %></p>
+    <p>
+        Introducing the seamless journaling experience of Daily Journal! With just a simple URL visit - <b> /compose </b>- you're instantly transported into a world of expression. Craft the <b>title</b>  of your day and pour the happenings into the entry field, capturing the essence of your today. Once satisfied, a single click on <b>"PUBLISH" </b> weaves your words into the tapestry of the Daily Journal home page. It's that effortless - no fuss, no complicated steps. Your thoughts become part of a collective narrative, painting a vivid picture of shared experiences. Start sharing your journey today and let the pages of Daily Journal reflect the beauty of your everyday adventures.
+    </p>
+      
+  
+
+    <!-- forEac(let i=0 ; i<posts.length; i++){ -->
+    <% posts.forEach(function(post){ %>
+        <h1><%= post.title %></h1>
+        <p><%= post.content.substring(0,100) + "..."%> <a href="/post/<%= post.title %>">Read More</a></p>
+    <% }); %>
+
+  
+
+
+<%- include("partials/footer"); -%>
+
